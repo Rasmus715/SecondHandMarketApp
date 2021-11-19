@@ -1,0 +1,13 @@
+﻿@using System.Security.Claims
+
+@{
+    switch (Context.User.FindFirstValue("Role"))
+    {
+        case "User":
+            Layout = "~/Views/Shared/_LayoutUser.cshtml";
+            break;
+        default:
+            Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+            break;
+    }
+}

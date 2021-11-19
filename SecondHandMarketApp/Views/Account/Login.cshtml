@@ -1,0 +1,41 @@
+﻿@model SecondHandMarketApp.ViewModels.Account.LoginViewModel
+
+<h2>Вход на сайт</h2>
+
+<div class="cotainer">
+    <div class="validation" asp-validation-summary="ModelOnly"></div>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <form asp-action="Login" asp-controller="Account">
+                        <div class="form-group row">
+                            <label asp-for="Email" for="Login" class="col-md-4 col-form-label text-md-right">E-Mail адрес</label>
+                            <div class="col-md-6">
+                                <input asp-for="Email" type="text" id="Email" class="form-control" name="Email">
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label asp-for="Password" for="password" class="col-md-4 col-form-label text-md-right">Пароль</label>
+                            <div class="col-md-6">
+                                <input asp-for="Password" type="password" id="Password" class="form-control" name="Password">
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 offset-md-4">
+                            <button type="submit" class="btn btn-primary">
+                                Войти
+                            </button>
+                        </div>
+                    </form>
+                    <a asp-action="Register" asp-controller="Account" class="btn btn-link">
+                        Регистрация
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
